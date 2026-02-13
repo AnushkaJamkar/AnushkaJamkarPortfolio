@@ -9,6 +9,7 @@ import Experience from '@/components/Experience'
 import Contact from '@/components/Contact'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import WhatsAppButton from '@/components/WhatsAppButton'
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -35,6 +36,7 @@ export default function Home() {
       <Projects />
       <Contact />
       <Footer />
+      <WhatsAppButton />
     </main>
   )
 }
