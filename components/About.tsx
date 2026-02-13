@@ -144,7 +144,7 @@ export default function About() {
                   transition={{ delay: 0.4 }}
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
-                  <div className="text-4xl font-bold text-gradient mb-2">4+</div>
+                  <div className="text-4xl font-bold text-gradient mb-2">1+</div>
                   <div className="text-sm text-white/70">Years Experience</div>
                 </motion.div>
                 <motion.div

@@ -9,7 +9,7 @@ const experiences = [
     title: 'Full Stack Developer & Automation Specialist',
     company: 'Freelancing',
     location: 'Remote',
-    period: '2020 - Present',
+    period: '2025 - Present',
     description: [
       'Developed scalable web applications using React, Next.js, Node.js, and modern frameworks',
       'Built custom WordPress themes and plugins for various clients',
