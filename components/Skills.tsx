@@ -12,7 +12,6 @@ import {
   FaGitAlt,
   FaDocker,
   FaAws,
-  FaDatabase,
   FaRobot,
   FaBrain,
   FaChartLine,
@@ -91,4 +90,3 @@ export default function Skills() {
     </section>
   )
 }
-

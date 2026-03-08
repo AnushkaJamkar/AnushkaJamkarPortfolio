@@ -47,7 +47,7 @@ export default function Contact() {
       } else {
         setSubmitStatus('error')
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -76,9 +76,9 @@ export default function Contact() {
               transition={{ delay: 0.2 }}
             >
               <div>
-                <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
+                <h3 className="text-2xl font-bold mb-6">Let&apos;s Connect</h3>
                 <p className="text-white/80 mb-8 leading-relaxed">
-                  I'm always open to discussing new projects, creative ideas, or
+                  I&apos;m always open to discussing new projects, creative ideas, or
                   opportunities to be part of your visions. Feel free to reach out!
                 </p>
               </div>
@@ -208,7 +208,7 @@ export default function Contact() {
                   animate={{ opacity: 1, y: 0 }}
                   className="text-green-400 text-sm"
                 >
-                  Message sent successfully! I'll get back to you soon.
+                  Message sent successfully! I&apos;ll get back to you soon.
                 </motion.p>
               )}
 
@@ -245,4 +245,3 @@ export default function Contact() {
     </section>
   )
 }
-

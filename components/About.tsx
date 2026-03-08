@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useInView } from 'react-intersection-observer'
-import { FaCode, FaPalette, FaRocket, FaProjectDiagram, FaUsers, FaAward, FaLightbulb } from 'react-icons/fa'
+import { FaCode, FaPalette, FaRocket, FaLightbulb } from 'react-icons/fa'
 
 export default function About() {
   const [ref, inView] = useInView({
@@ -100,7 +100,7 @@ export default function About() {
               
               <div className="space-y-6">
                 <p className="text-lg text-white/80 leading-relaxed">
-                  I'm a passionate full-stack developer with a love for creating
+                  I&apos;m a passionate full-stack developer with a love for creating
                   beautiful and functional web applications. With expertise in modern
                   web technologies, I bring ideas to life through clean code and
                   innovative solutions.
@@ -116,7 +116,7 @@ export default function About() {
             {/* Right Column - Stats and Features */}
             <motion.div variants={itemVariants} className="space-y-6">
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                 <motion.div
                   className="glass p-6 rounded-xl text-center"
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -124,8 +124,8 @@ export default function About() {
                   transition={{ delay: 0.2 }}
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
-                  <div className="text-4xl font-bold text-gradient mb-2">50+</div>
-                  <div className="text-sm text-white/70">Projects Completed</div>
+                  <div className="text-4xl font-bold text-gradient mb-2">10+</div>
+                  <div className="text-sm text-white/70">Projects</div>
                 </motion.div>
                 <motion.div
                   className="glass p-6 rounded-xl text-center"
@@ -134,8 +134,8 @@ export default function About() {
                   transition={{ delay: 0.3 }}
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
-                  <div className="text-4xl font-bold text-gradient mb-2">30+</div>
-                  <div className="text-sm text-white/70">Happy Clients</div>
+                  <div className="text-2xl font-bold text-gradient mb-2">Freelance</div>
+                  <div className="text-sm text-white/70">Clients</div>
                 </motion.div>
                 <motion.div
                   className="glass p-6 rounded-xl text-center"
@@ -145,17 +145,7 @@ export default function About() {
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
                   <div className="text-4xl font-bold text-gradient mb-2">1+</div>
-                  <div className="text-sm text-white/70">Years Experience</div>
-                </motion.div>
-                <motion.div
-                  className="glass p-6 rounded-xl text-center"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={inView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ delay: 0.5 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                >
-                  <div className="text-4xl font-bold text-gradient mb-2">100%</div>
-                  <div className="text-sm text-white/70">Satisfaction Rate</div>
+                  <div className="text-sm text-white/70">Years Coding Experience</div>
                 </motion.div>
               </div>
 
@@ -203,4 +193,3 @@ export default function About() {
     </section>
   )
 }
-

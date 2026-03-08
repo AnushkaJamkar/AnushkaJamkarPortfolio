@@ -93,14 +93,14 @@ export default function Hero() {
             variants={itemVariants}
             className="text-5xl md:text-7xl font-bold mb-6"
           >
-            <span className="text-gradient">Hi, I'm Anushka Jamkar</span>
+            <span className="text-gradient">Hi, I&apos;m Anushka Jamkar</span>
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
             className="text-xl md:text-2xl text-white/80 mb-4"
           >
-            Full Stack Developer & Creative Problem Solver
+            Full-Stack Developer building AI-powered tools, data-driven applications, and scalable web platforms.
           </motion.p>
 
           <motion.p
@@ -173,4 +173,3 @@ export default function Hero() {
     </section>
   )
 }
-

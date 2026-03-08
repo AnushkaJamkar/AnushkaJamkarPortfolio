@@ -6,6 +6,31 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 
 const projects = [
   {
+    title: 'Code Explainer Platform',
+    description:
+      'An AI-powered developer learning platform that analyzes source code and generates line-by-line explanations, complexity metrics, flowcharts, and refactoring insights.',
+    image: '</>',
+    technologies: [
+      'React',
+      'Next.js',
+      'Tailwind CSS',
+      'Node.js',
+      'Express.js',
+      'MongoDB Atlas',
+      'Vercel',
+      'Render',
+    ],
+    highlights: [
+      'Code analysis with cyclomatic complexity and maintainability scoring',
+      'Line-by-line explanation with logic and impact',
+      'Flowchart generation for execution paths',
+      'AI tutor support, code smell detection, and refactoring suggestions',
+    ],
+    github: 'https://github.com',
+    live: 'https://code-explainer-platform.vercel.app/',
+    color: 'from-cyan-500 to-emerald-500',
+  },
+  {
     title: 'E-Commerce Platform',
     description: 'A full-featured e-commerce platform with payment integration, user authentication, and admin dashboard. Built with Next.js, TypeScript, and Stripe.',
     image: '🛒',
@@ -96,6 +121,13 @@ export default function Projects() {
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
                   <p className="text-white/70 mb-4 leading-relaxed">{project.description}</p>
+                  {project.highlights?.length ? (
+                    <ul className="text-sm text-white/70 mb-4 space-y-2">
+                      {project.highlights.map((point) => (
+                        <li key={point}>- {point}</li>
+                      ))}
+                    </ul>
+                  ) : null}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech) => (
                       <span
@@ -127,7 +159,7 @@ export default function Projects() {
                       whileTap={{ scale: 0.9 }}
                     >
                       <FaExternalLinkAlt />
-                      <span>Request Demo</span>
+                      <span>Live Demo</span>
                     </motion.a>
                   </div>
                 </div>
@@ -139,4 +171,3 @@ export default function Projects() {
     </section>
   )
 }
-

@@ -6,17 +6,14 @@ import { FaBriefcase, FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa'
 
 const experiences = [
   {
-    title: 'Full Stack Developer & Automation Specialist',
+    title: 'Full-Stack Developer',
     company: 'Freelancing',
     location: 'Remote',
     period: '2025 - Present',
     description: [
-      'Developed scalable web applications using React, Next.js, Node.js, and modern frameworks',
-      'Built custom WordPress themes and plugins for various clients',
-      'Created Shopify stores with custom functionality and integrations',
-      'Implemented automation solutions and AI agents for business processes',
-      'Developed data analytics dashboards and reporting systems',
-      'Delivered end-to-end solutions from design to deployment',
+      'Built AI-powered tools and data-driven web applications',
+      'Developed scalable full-stack platforms from frontend to backend',
+      'Delivered practical solutions for freelance clients',
     ],
   },
 ]
@@ -38,6 +35,9 @@ export default function Experience() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
             <span className="text-gradient">Experience</span>
           </h2>
+          <p className="text-center text-white/75 max-w-3xl mx-auto mb-6">
+            Full-Stack Developer building AI-powered tools, data-driven applications, and scalable web platforms.
+          </p>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 mx-auto mb-12" />
 
           <div className="max-w-4xl mx-auto space-y-8">
@@ -88,4 +88,3 @@ export default function Experience() {
     </section>
   )
 }
-
