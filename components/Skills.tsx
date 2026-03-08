@@ -2,42 +2,26 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import {
-  FaReact,
-  FaNode,
-  FaPython,
-  FaJs,
-  FaHtml5,
-  FaCss3Alt,
-  FaGitAlt,
-  FaDocker,
-  FaAws,
-  FaRobot,
-  FaBrain,
-  FaChartLine,
-} from 'react-icons/fa'
-import { SiNextdotjs, SiTypescript, SiTailwindcss, SiMongodb, SiPostgresql, SiWordpress, SiShopify } from 'react-icons/si'
+import { FaReact, FaNode, FaJs, FaHtml5, FaCss3Alt, FaGitAlt, FaRobot, FaPython, FaFlask, FaDatabase, FaChartBar, FaChartLine } from 'react-icons/fa'
+import { SiNextdotjs, SiMongodb, SiExpress, SiGithub } from 'react-icons/si'
 
 const skills = [
   { name: 'React', icon: <FaReact />, level: 90, color: 'from-blue-400 to-cyan-400' },
   { name: 'Next.js', icon: <SiNextdotjs />, level: 85, color: 'from-gray-400 to-gray-600' },
-  { name: 'TypeScript', icon: <SiTypescript />, level: 88, color: 'from-blue-500 to-blue-700' },
+  { name: 'Semantic HTML', icon: <FaHtml5 />, level: 90, color: 'from-orange-400 to-orange-600' },
+  { name: 'CSS', icon: <FaCss3Alt />, level: 88, color: 'from-blue-400 to-blue-600' },
+  { name: 'JavaScript', icon: <FaJs />, level: 90, color: 'from-yellow-400 to-yellow-600' },
   { name: 'Node.js', icon: <FaNode />, level: 85, color: 'from-green-400 to-green-600' },
-  { name: 'Python', icon: <FaPython />, level: 80, color: 'from-yellow-400 to-blue-500' },
-  { name: 'JavaScript', icon: <FaJs />, level: 92, color: 'from-yellow-400 to-yellow-600' },
-  { name: 'HTML5', icon: <FaHtml5 />, level: 95, color: 'from-orange-400 to-orange-600' },
-  { name: 'CSS3', icon: <FaCss3Alt />, level: 90, color: 'from-blue-400 to-blue-600' },
-  { name: 'Tailwind CSS', icon: <SiTailwindcss />, level: 88, color: 'from-cyan-400 to-blue-500' },
+  { name: 'Express.js', icon: <SiExpress />, level: 80, color: 'from-gray-400 to-gray-600' },
   { name: 'MongoDB', icon: <SiMongodb />, level: 82, color: 'from-green-400 to-green-600' },
-  { name: 'PostgreSQL', icon: <SiPostgresql />, level: 80, color: 'from-blue-400 to-blue-600' },
+  { name: 'Python', icon: <FaPython />, level: 82, color: 'from-blue-400 to-yellow-500' },
+  { name: 'Flask', icon: <FaFlask />, level: 78, color: 'from-gray-300 to-gray-500' },
+  { name: 'SQL', icon: <FaDatabase />, level: 80, color: 'from-sky-400 to-blue-600' },
+  { name: 'Power BI', icon: <FaChartBar />, level: 75, color: 'from-yellow-400 to-amber-600' },
+  { name: 'Tableau', icon: <FaChartLine />, level: 74, color: 'from-indigo-400 to-blue-600' },
   { name: 'Git', icon: <FaGitAlt />, level: 85, color: 'from-orange-400 to-red-500' },
-  { name: 'Docker', icon: <FaDocker />, level: 75, color: 'from-blue-400 to-cyan-400' },
-  { name: 'AWS', icon: <FaAws />, level: 70, color: 'from-orange-400 to-orange-600' },
-  { name: 'WordPress', icon: <SiWordpress />, level: 85, color: 'from-blue-500 to-blue-700' },
-  { name: 'Shopify', icon: <SiShopify />, level: 88, color: 'from-green-500 to-emerald-500' },
+  { name: 'GitHub', icon: <SiGithub />, level: 85, color: 'from-gray-400 to-gray-600' },
   { name: 'Automation', icon: <FaRobot />, level: 87, color: 'from-cyan-400 to-teal-400' },
-  { name: 'AI Agents', icon: <FaBrain />, level: 85, color: 'from-teal-400 to-emerald-400' },
-  { name: 'Data Analytics', icon: <FaChartLine />, level: 83, color: 'from-blue-400 to-cyan-400' },
 ]
 
 export default function Skills() {

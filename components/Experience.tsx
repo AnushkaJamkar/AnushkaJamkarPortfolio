@@ -4,17 +4,41 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { FaBriefcase, FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa'
 
-const experiences = [
+type ExperienceItem = {
+  title: string
+  company: string
+  location: string
+  period: string
+  description: string[]
+  highlights: string[]
+}
+
+const experiences: ExperienceItem[] = [
   {
     title: 'Full-Stack Developer',
     company: 'Freelancing',
     location: 'Remote',
     period: '2025 - Present',
     description: [
-      'Built AI-powered tools and data-driven web applications',
-      'Developed scalable full-stack platforms from frontend to backend',
-      'Delivered practical solutions for freelance clients',
+      'Built and deployed web applications for real client requirements.',
+      'Worked across frontend and backend using React, Next.js, Node.js, Express, and MongoDB.',
+      'Developed AI-assisted tools and automation features to improve productivity.',
+      'Managed delivery timelines and communication with freelance clients.',
     ],
+    highlights: ['10+ Projects', 'Freelance Clients', '1+ Years Coding Experience'],
+  },
+  {
+    title: 'Mentor - Web Development & Python',
+    company: 'Independent Mentoring',
+    location: 'Remote',
+    period: '2025 - Present',
+    description: [
+      'Mentored students on HTML, CSS, JavaScript, React basics, and Python fundamentals.',
+      'Provided hands-on guidance through mini-projects and debugging sessions.',
+      'Helped students build confidence in problem-solving and writing clean code.',
+      'Created simple learning plans based on each student\'s pace and goals.',
+    ],
+    highlights: ['Student Mentoring', 'Web Dev Training', 'Python Teaching'],
   },
 ]
 
@@ -36,14 +60,14 @@ export default function Experience() {
             <span className="text-gradient">Experience</span>
           </h2>
           <p className="text-center text-white/75 max-w-3xl mx-auto mb-6">
-            Full-Stack Developer building AI-powered tools, data-driven applications, and scalable web platforms.
+            Full-Stack Developer focused on building practical, maintainable, and business-oriented web solutions.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 mx-auto mb-12" />
 
           <div className="max-w-4xl mx-auto space-y-8">
             {experiences.map((exp, index) => (
               <motion.div
-                key={index}
+                key={exp.title}
                 className="glass p-6 md:p-8 rounded-xl relative"
                 initial={{ opacity: 0, x: -50 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -70,14 +94,23 @@ export default function Experience() {
                         {exp.period}
                       </span>
                     </div>
+
                     <ul className="space-y-2 mt-4">
-                      {exp.description.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3 text-white/80">
-                          <span className="text-gradient mt-1.5">▸</span>
+                      {exp.description.map((item) => (
+                        <li key={item} className="flex items-start gap-3 text-white/80">
+                          <span className="text-gradient mt-1.5">-</span>
                           <span>{item}</span>
                         </li>
                       ))}
                     </ul>
+
+                    <div className="flex flex-wrap gap-3 mt-5">
+                      {exp.highlights.map((item) => (
+                        <span key={item} className="px-3 py-1 rounded-full bg-white/10 text-sm text-white/80">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </motion.div>

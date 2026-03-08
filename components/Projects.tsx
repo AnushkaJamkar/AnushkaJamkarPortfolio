@@ -4,11 +4,22 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 
-const projects = [
+type Project = {
+  title: string
+  description: string
+  image: string
+  technologies: string[]
+  highlights?: string[]
+  github?: string
+  live: string
+  color: string
+}
+
+const projects: Project[] = [
   {
     title: 'Code Explainer Platform',
     description:
-      'An AI-powered developer learning platform that analyzes source code and generates line-by-line explanations, complexity metrics, flowcharts, and refactoring insights.',
+      'AI-powered developer learning platform for understanding and improving source code with analysis reports and guided explanations.',
     image: '</>',
     technologies: [
       'React',
@@ -21,68 +32,35 @@ const projects = [
       'Render',
     ],
     highlights: [
-      'Code analysis with cyclomatic complexity and maintainability scoring',
-      'Line-by-line explanation with logic and impact',
-      'Flowchart generation for execution paths',
-      'AI tutor support, code smell detection, and refactoring suggestions',
+      'Code analysis with complexity and maintainability metrics',
+      'Line-by-line explanations and flowchart visualization',
+      'AI tutor support with code smell detection and refactoring suggestions',
     ],
-    github: 'https://github.com',
+    github: 'https://github.com/AnushkaJamkar/code-explainer-platform',
     live: 'https://code-explainer-platform.vercel.app/',
     color: 'from-cyan-500 to-emerald-500',
   },
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-featured e-commerce platform with payment integration, user authentication, and admin dashboard. Built with Next.js, TypeScript, and Stripe.',
-    image: '🛒',
-    technologies: ['Next.js', 'TypeScript', 'Stripe', 'MongoDB', 'Tailwind CSS'],
-    github: 'https://github.com',
-    live: 'https://example.com',
-    color: 'from-blue-500 to-cyan-500',
-  },
-  {
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-    image: '📋',
-    technologies: ['React', 'Node.js', 'Socket.io', 'PostgreSQL', 'Material-UI'],
-    github: 'https://github.com',
-    live: 'https://example.com',
-    color: 'from-purple-500 to-pink-500',
-  },
-  {
-    title: 'Social Media Dashboard',
-    description: 'An analytics dashboard for social media management with data visualization, scheduling, and performance tracking.',
-    image: '📊',
-    technologies: ['React', 'D3.js', 'Express', 'MongoDB', 'Chart.js'],
-    github: 'https://github.com',
-    live: 'https://example.com',
-    color: 'from-green-500 to-emerald-500',
-  },
-  {
-    title: 'AI Content Generator',
-    description: 'An AI-powered content generation tool that helps create blog posts, social media content, and marketing copy using advanced NLP models.',
-    image: '🤖',
-    technologies: ['Next.js', 'Python', 'OpenAI API', 'FastAPI', 'PostgreSQL'],
-    github: 'https://github.com',
-    live: 'https://example.com',
-    color: 'from-orange-500 to-red-500',
-  },
-  {
-    title: 'Fitness Tracking App',
-    description: 'A comprehensive fitness tracking application with workout plans, nutrition tracking, and progress analytics.',
-    image: '💪',
-    technologies: ['React Native', 'Node.js', 'MongoDB', 'Firebase', 'Redux'],
-    github: 'https://github.com',
-    live: 'https://example.com',
-    color: 'from-pink-500 to-rose-500',
-  },
-  {
-    title: 'Real Estate Platform',
-    description: 'A modern real estate platform with property listings, virtual tours, mortgage calculator, and agent matching.',
-    image: '🏠',
-    technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'AWS'],
-    github: 'https://github.com',
-    live: 'https://example.com',
-    color: 'from-indigo-500 to-purple-500',
+    title: 'Desai Academy Website',
+    description:
+      'Responsive academy website focused on clear navigation, performance, and maintainable frontend structure.',
+    image: 'ACA',
+    technologies: [
+      'React (Vite)',
+      'React Router DOM',
+      'Plain CSS',
+      'Vercel',
+      'Git',
+      'GitHub',
+    ],
+    highlights: [
+      'Mobile-first responsive pages: Home, About, Programs, Why Us, and Contact',
+      'Simple architecture without heavy UI libraries for better maintainability',
+      'Organized component/page structure for easy updates and scaling',
+    ],
+    github: 'https://github.com/AnushkaJamkar/desai-academy',
+    live: 'https://desai-academy.vercel.app/',
+    color: 'from-blue-500 to-indigo-500',
   },
 ]
 
@@ -103,9 +81,12 @@ export default function Projects() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
             <span className="text-gradient">Featured Projects</span>
           </h2>
+          <p className="text-center text-white/70 max-w-3xl mx-auto mb-6">
+            Selected projects with live deployments, clear architecture, and practical business impact.
+          </p>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 mx-auto mb-12" />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -139,17 +120,19 @@ export default function Projects() {
                     ))}
                   </div>
                   <div className="flex gap-4">
-                    <motion.a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <FaGithub />
-                      <span>Code</span>
-                    </motion.a>
+                    {project.github ? (
+                      <motion.a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <FaGithub />
+                        <span>Code</span>
+                      </motion.a>
+                    ) : null}
                     <motion.a
                       href={project.live}
                       target="_blank"
